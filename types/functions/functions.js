@@ -17,3 +17,8 @@ var doSomething = function (person, age, isFunny) {
     return isFunny ? "".concat(person, " is ").concat(age, " but still got it") : "he is not funny";
 };
 console.log(doSomething("Josh", 31, true));
+// adding default values in typescript
+function greetings(person) {
+    if (person === void 0) { person = "stranger"; }
+    return person;
+}

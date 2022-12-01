@@ -24,3 +24,9 @@ const doSomething = (person: string, age: number, isFunny: boolean) => {
 };
 
 console.log(doSomething("Josh", 31, true));
+
+// adding default values in typescript
+
+function greetings(person: string = "stranger") {
+  return person;
+}
