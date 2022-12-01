@@ -30,3 +30,25 @@ console.log(doSomething("Josh", 31, true));
 function greetings(person: string = "stranger") {
   return person;
 }
+
+// return type annotations
+
+function basicFunction(x: number, y: number): number {
+  return x * y;
+}
+// do not have to put the return type -- but at times is a good practice
+// note when void is inferred as the return value
+
+function rando(num: number): string | number {
+  if (Math.random() < 0.5) {
+    return num.toString();
+  }
+  return num;
+}
+
+// note how can specify multiple return values as above
+// the above is called a union type -- :string | number
+
+const add = (x: number, y: number): number => {
+  return x + y;
+};
