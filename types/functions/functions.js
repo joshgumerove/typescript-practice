@@ -35,3 +35,16 @@ function rando(num) {
     return num;
 }
 // note how can specify multiple return values as above
+// the above is called a union type -- :string | number
+var add = function (x, y) {
+    return x + y;
+};
+// anonymous function contextaul typing
+var colors = ["red", "orange", "yellow"];
+colors.map(function (color) { return color.toUpperCase(); }); // note we do not need to annotate in this case --> although we could if we want color: string (typescript can infer the type)
+// void type -- usually only used with functions that do not return anything
+var annoyUser = function (num) {
+    for (var i = 0; i < num; i++) {
+        console.log("hello world");
+    }
+};

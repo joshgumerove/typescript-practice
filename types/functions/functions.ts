@@ -52,3 +52,33 @@ function rando(num: number): string | number {
 const add = (x: number, y: number): number => {
   return x + y;
 };
+
+// anonymous function contextaul typing
+
+const colors = ["red", "orange", "yellow"];
+
+colors.map((color) => color.toUpperCase()); // note we do not need to annotate in this case --> although we could if we want color: string (typescript can infer the type)
+
+// void type -- usually only used with functions that do not return anything
+
+const annoyUser = (num: number): void => {
+  for (let i = 0; i < num; i++) {
+    console.log("hello world");
+  }
+};
+
+// specify that function is not suppose to return anything
+
+// the Never type:
+// represents values that NEVER occur
+// with never --> function does not actually finish executing (should not be confused with void)
+
+function makeError(msg: string): never {
+  throw new Error(msg);
+}
+
+function gameLoop(): never {
+  while (true) {
+    console.log("game loop running");
+  }
+}
