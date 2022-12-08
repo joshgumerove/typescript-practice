@@ -131,3 +131,18 @@ const user: User = {
 
 console.log(user.id);
 // user.id = 34523523412; will complain because cannot write to this
+
+type Circle = {
+  radius: number;
+};
+
+type Colorful = {
+  color: string;
+};
+
+type ColorfulCircle = Circle & Colorful;
+
+const happyFace: ColorfulCircle = {
+  radius: 4,
+  color: "yellow",
+};
