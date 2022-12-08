@@ -55,6 +55,7 @@ let coordinate: { x: number; y: number } = {
 type Point = {
   x: number;
   y: number;
+  z?: number; // makes it optional
 }; // not creating a new type just creating a reference to a type
 
 function randomCoordinate(): Point {
