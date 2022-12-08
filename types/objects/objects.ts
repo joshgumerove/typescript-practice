@@ -116,3 +116,18 @@ const test = {
 
 console.log(calculatePayout(test));
 printSongDetails(test);
+
+// the readonly modifier
+
+type User = {
+  readonly id: number;
+  username: string;
+};
+
+const user: User = {
+  id: 43234234,
+  username: "jgumerove@gmail.com",
+};
+
+console.log(user.id);
+// user.id = 34523523412; will complain because cannot write to this
