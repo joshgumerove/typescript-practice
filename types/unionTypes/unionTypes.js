@@ -23,3 +23,17 @@ function calculateTax(price, tax) {
 console.log(calculateTax(5000, 0.34));
 console.log(calculateTax("6000", 0.34));
 // type narrowing example above -- conditional logic used
+// remember array syntax
+var nums = [1, 2, 3, 4];
+// const stuff: any[] = [1, 3, "Josh", true];
+var stuff = ["josh", 1]; // note that we need the parenthesis
+var locations = [];
+locations.push(coordinates);
+console.log(locations);
+// literal types -- not union on own but usually used with union
+var zero = 0; // has to be zero
+// zero = 2; will give an error
+var giveAnswer = function (answer) {
+    return "The answer is ".concat(answer);
+};
+console.log(giveAnswer("maybe"));
