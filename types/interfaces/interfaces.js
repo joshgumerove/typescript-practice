@@ -28,3 +28,17 @@ var shoes = {
     }
 };
 console.log(shoes.applyDiscount(0.3));
+var Gumerov = {
+    familyMembers: 5,
+    names: ["Josh", "Jeremy", "Brennan"]
+}; // note: we are not redeclaring the interface here -- we added onto it by reopening it
+var buster = {
+    name: "Buster",
+    age: 5,
+    breed: "Bouvier",
+    bark: function () {
+        return "wooof";
+    },
+    job: "drug sniffer"
+};
+console.log(buster.job);

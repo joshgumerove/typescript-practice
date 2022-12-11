@@ -76,3 +76,43 @@ const shoes: Product = {
 };
 
 console.log(shoes.applyDiscount(0.3));
+
+// reopening interfaces -- can add on after defining
+
+interface Gumerove {
+  familyMembers: number;
+}
+
+interface Gumerove {
+  names: string[];
+}
+
+const Gumerov: Gumerove = {
+  familyMembers: 5,
+  names: ["Josh", "Jeremy", "Brennan"],
+}; // note: we are not redeclaring the interface here -- we added onto it by reopening it
+
+// extending an interface (inheriting from another interface like inheritance with class)
+
+interface Dog {
+  name: string;
+  age: number;
+  breed: string;
+  bark(): string;
+}
+
+interface ServiceDog extends Dog {
+  job: "drug sniffer" | "bomb" | "guide dog";
+}
+
+const buster: ServiceDog = {
+  name: "Buster",
+  age: 5,
+  breed: "Bouvier",
+  bark() {
+    return "wooof";
+  },
+  job: "drug sniffer",
+};
+
+console.log(buster.job);
