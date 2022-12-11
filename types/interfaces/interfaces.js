@@ -42,3 +42,11 @@ var buster = {
     job: "drug sniffer"
 };
 console.log(buster.job);
+var joshua = {
+    name: "Josh Gumerove",
+    id: 55555,
+    email: "jgumerove@something.com",
+    level: "Junior",
+    languages: ["JavaScript", "Python", "Ruby", "TypeScript"]
+};
+console.log(joshua);

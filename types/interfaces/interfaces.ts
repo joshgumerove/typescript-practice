@@ -116,3 +116,29 @@ const buster: ServiceDog = {
 };
 
 console.log(buster.job);
+
+// multiple interface inheritance
+
+interface Worker {
+  name: string;
+}
+
+interface Employee {
+  readonly id: number;
+  email: string;
+}
+
+interface Engineer extends Worker, Employee {
+  level: string;
+  languages: string[];
+}
+
+const joshua: Engineer = {
+  name: "Josh Gumerove",
+  id: 55555,
+  email: "jgumerove@something.com",
+  level: "Junior",
+  languages: ["JavaScript", "Python", "Ruby", "TypeScript"],
+};
+
+console.log(joshua);
