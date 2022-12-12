@@ -7,3 +7,9 @@ const norma = {
 };
 // note tsc -w file_name command
 // ntoe tsc --init command
+const juniper = {
+    breed: "Silkie",
+    eggsPerWeek: 5,
+    name: "Juniper",
+    age: 2,
+};

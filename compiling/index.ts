@@ -14,3 +14,10 @@ const norma: Chicken = {
 
 // note tsc -w file_name command
 // ntoe tsc --init command
+
+const juniper: Chicken = {
+  breed: "Silkie",
+  eggsPerWeek: 5,
+  name: "Juniper",
+  age: 2,
+};
