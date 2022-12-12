@@ -9,3 +9,9 @@ const printProduct = (product: Product): void => {
 };
 
 // note how we can just compile all using tsc
+
+const testProduct: Product = {
+  price: 50,
+  name: "Test product",
+  quantity: 10,
+};
