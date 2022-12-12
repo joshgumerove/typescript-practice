@@ -21,3 +21,10 @@ const juniper: Chicken = {
   name: "Juniper",
   age: 2,
 };
+
+const josh: Chicken = {
+  breed: "Nuggets",
+  eggsPerWeek: 0,
+  name: "Josh",
+  age: 31,
+};
