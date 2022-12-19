@@ -3,3 +3,5 @@
 function wrapInArry(element) {
     return [element];
 }
+const nums = [];
+const alternative = []; //this is an example of built-in generic that we provided a type to (array is the name of the interface)
