@@ -3,23 +3,22 @@
 // ******************* PART 1 *******************
 // **********************************************
 // Create an empty array of numbers called "ages":
-exports.__esModule = true;
-var ages = [];
+Object.defineProperty(exports, "__esModule", { value: true });
+const ages = [];
 // **********************************************
 // ******************* PART 2 *******************
 // **********************************************
 // Create an array variable called gameBoard that starts as an empty array.
 // It should be typed to hold a 2 dimensional array of strings
-var gameBoard = [];
+const gameBoard = [];
 // **********************************************
 // ******************* PART 4 *******************
 // **********************************************
 // Write a function called getTotal that accepts an array of Product types
 // It should return the sum of all the products' prices
 function getTotal(products) {
-    var total = 0;
-    for (var _i = 0, products_1 = products; _i < products_1.length; _i++) {
-        var product = products_1[_i];
+    let total = 0;
+    for (let product of products) {
         total += product.price;
     }
     return total;

@@ -1,52 +1,52 @@
 "use strict";
 // serve similar purpose to type aliases
 // describe shape of objects (and only objects)
-exports.__esModule = true;
-var pt = {
+Object.defineProperty(exports, "__esModule", { value: true });
+const pt = {
     x: 12,
-    y: 30
+    y: 30,
 };
-var thomas = {
+const thomas = {
     id: 55555,
     firstName: "Thomas",
     lastName: "Hardy",
-    nickName: "Tommy"
+    nickName: "Tommy",
 };
 thomas.firstName = "Tommy John";
-var josh = {
+const josh = {
     id: 556234234,
     first: "Josh",
     last: "Gumerov",
-    sayHi: function () { return "Hello ".concat(josh.first); }
+    sayHi: () => `Hello ${josh.first}`,
 };
 console.log(josh.sayHi());
-var shoes = {
+const shoes = {
     name: "blue suede shoes",
     price: 100,
-    applyDiscount: function (discount) {
+    applyDiscount(discount) {
         return shoes.price - discount * shoes.price;
-    }
+    },
 };
 console.log(shoes.applyDiscount(0.3));
-var Gumerov = {
+const Gumerov = {
     familyMembers: 5,
-    names: ["Josh", "Jeremy", "Brennan"]
+    names: ["Josh", "Jeremy", "Brennan"],
 }; // note: we are not redeclaring the interface here -- we added onto it by reopening it
-var buster = {
+const buster = {
     name: "Buster",
     age: 5,
     breed: "Bouvier",
-    bark: function () {
+    bark() {
         return "wooof";
     },
-    job: "drug sniffer"
+    job: "drug sniffer",
 };
 console.log(buster.job);
-var joshua = {
+const joshua = {
     name: "Josh Gumerove",
     id: 55555,
     email: "jgumerove@something.com",
     level: "Junior",
-    languages: ["JavaScript", "Python", "Ruby", "TypeScript"]
+    languages: ["JavaScript", "Python", "Ruby", "TypeScript"],
 };
 console.log(joshua);

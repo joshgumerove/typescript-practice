@@ -1,17 +1,18 @@
+"use strict";
 // **********************************************
 // ******************* PART 1 *******************
 // **********************************************
 // Create a variable called highScore that can be a number OR a boolean
-var highScore;
+let highScore;
 // **********************************************
 // ******************* PART 2 *******************
 // **********************************************
 // create an array called stuff
 // it can be an array of numbers OR an array of strings
 // it cannot be an array of numbers and strings (mixed together)
-var stuff = [];
+const stuff = [];
 // Create an array called colors that can hold a mixture of RGB and HSL color types
-var colors = [];
+const colors = [];
 // **********************************************
 // ******************* PART 6 *******************
 // **********************************************
@@ -21,7 +22,7 @@ function greet(people) {
     if (typeof people === "string") {
         people = [people];
     }
-    people.forEach(function (person) { return console.log("Hello, ".concat(person)); });
+    people.forEach((person) => console.log(`Hello, ${person}`));
 }
 greet(["josh"]);
 greet(["Josh", "Jeremy", "Brennan"]);

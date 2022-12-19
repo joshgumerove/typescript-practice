@@ -1,6 +1,6 @@
 export {};
 
-function square(num) {
+function square(num: number) {
   return num * num;
 } // by default the type will be any in this case -- which is not good
 
