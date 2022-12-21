@@ -31,3 +31,26 @@ console.log(getRandomElement<string>(["Josh", "Jeremy", "Brennan"])); // note ho
 let x = 23; // note -- if used const would have to be 23
 getRandomElement<boolean>([true, false, true]); // do not need to provide the boolean type because of inference
 getRandomElement([true, false, true]); // this is not the case with every generic so at times will have to provide
+
+// generics with multiple types
+console.log("********");
+
+function merge<T, U>(object1: T, object2: U): T & U {
+  // note that this intersection is already inferred
+  return {
+    ...object1,
+    ...object2,
+  };
+} // note: multiple arguments
+
+console.log(
+  merge(
+    { firstName: "Josh", lastName: "Gumerove" },
+    { occupation: "Engineer", age: 31 }
+  )
+);
+
+const mergedObject = merge(
+  { firstName: "Josh", lastName: "Gumerove" },
+  { occupation: "Engineer", age: 31 }
+);
