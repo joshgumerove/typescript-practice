@@ -92,3 +92,38 @@ strings.push("abc");
 // strings.push(1) would get an error at compilation
 
 const defaultArray = makeEmptyList(); // will now be an array of type number
+
+// writing generic classes
+
+interface Song {
+  title: string;
+  artist: string;
+}
+
+interface Video {
+  title: string;
+  creator: string;
+  resolution: string;
+}
+
+class VideoPlaylist {
+  public videos: Video[] = [];
+}
+
+class SongPlaylist {
+  public songs: Song[] = [];
+}
+
+// refactor to single playlist class using generics
+
+class Playlist<T> {
+  public queue: T[] = [];
+
+  add(el: T) {
+    this.queue.push(el);
+  }
+}
+
+const songs = new Playlist<Song>();
+songs.add({ title: "ooh la la", artist: "Rod Stewart" }); // will complain if not of type song
+console.log(songs);

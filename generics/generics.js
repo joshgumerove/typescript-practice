@@ -52,3 +52,25 @@ const strings = makeEmptyList(); // this makes an empty string array (if do not 
 strings.push("abc");
 // strings.push(1) would get an error at compilation
 const defaultArray = makeEmptyList(); // will now be an array of type number
+class VideoPlaylist {
+    constructor() {
+        this.videos = [];
+    }
+}
+class SongPlaylist {
+    constructor() {
+        this.songs = [];
+    }
+}
+// refactor to single playlist class using generics
+class Playlist {
+    constructor() {
+        this.queue = [];
+    }
+    add(el) {
+        this.queue.push(el);
+    }
+}
+const songs = new Playlist();
+songs.add({ title: "ooh la la", artist: "Rod Stewart" }); // will complain if not of type song
+console.log(songs);
