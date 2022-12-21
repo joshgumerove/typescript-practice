@@ -43,3 +43,12 @@ function printDoubleLength(thing) {
 }
 console.log(printDoubleLength("adsf")); // note: when using interace does not have to be an object
 // console.log(printDoubleLength(123)); will know throw an error
+// default type parameters with generics
+function makeEmptyList() {
+    // will now default to type number
+    return [];
+}
+const strings = makeEmptyList(); // this makes an empty string array (if do not call it with string would get array of uknown type)
+strings.push("abc");
+// strings.push(1) would get an error at compilation
+const defaultArray = makeEmptyList(); // will now be an array of type number
