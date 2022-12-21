@@ -24,9 +24,15 @@ getRandomElement([true, false, true]); // do not need to provide the boolean typ
 getRandomElement([true, false, true]); // this is not the case with every generic so at times will have to provide
 // generics with multiple types
 console.log("********");
+// the extends keyword makes sure that the arguments are objects
 function merge(object1, object2) {
     // note that this intersection is already inferred
     return Object.assign(Object.assign({}, object1), object2);
 } // note: multiple arguments
 console.log(merge({ firstName: "Josh", lastName: "Gumerove" }, { occupation: "Engineer", age: 31 }));
 const mergedObject = merge({ firstName: "Josh", lastName: "Gumerove" }, { occupation: "Engineer", age: 31 });
+// const mergeFailure = merge(
+//   { firstName: "Josh", lastName: "Gumerove" },
+//   9
+// ); // will now get a complaint because added in extends
+// note what happens when we try to spread a non-object type (just get an empty keyword)

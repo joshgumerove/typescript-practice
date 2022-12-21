@@ -35,7 +35,11 @@ getRandomElement([true, false, true]); // this is not the case with every generi
 // generics with multiple types
 console.log("********");
 
-function merge<T, U>(object1: T, object2: U): T & U {
+// the extends keyword makes sure that the arguments are objects
+function merge<T extends object, U extends object>(
+  object1: T,
+  object2: U
+): T & U {
   // note that this intersection is already inferred
   return {
     ...object1,
@@ -54,3 +58,10 @@ const mergedObject = merge(
   { firstName: "Josh", lastName: "Gumerove" },
   { occupation: "Engineer", age: 31 }
 );
+
+// const mergeFailure = merge(
+//   { firstName: "Josh", lastName: "Gumerove" },
+//   9
+// ); // will now get a complaint because added in extends
+
+// note what happens when we try to spread a non-object type (just get an empty keyword)
