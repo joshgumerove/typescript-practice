@@ -65,3 +65,17 @@ const mergedObject = merge(
 // ); // will now get a complaint because added in extends
 
 // note what happens when we try to spread a non-object type (just get an empty keyword)
+
+// type constraints with interface
+console.log("****");
+
+interface Lengthy {
+  length: number;
+}
+
+function printDoubleLength<T extends Lengthy>(thing: T): number {
+  return thing.length * 2;
+}
+
+console.log(printDoubleLength("adsf")); // note: when using interace does not have to be an object
+// console.log(printDoubleLength(123)); will know throw an error
