@@ -84,6 +84,10 @@ function getFarmAnimalSound(animal) {
             return "mooo";
         case "rooster":
             return "doodledooo!";
+        case "sheep":
+            return "baaahhh";
+        default: //should never make it here if handled all cases correctly (never checking)
+            const shouldNeverGetHere = animal; // to tell us there is an error
     }
 }
 const cow = {
@@ -93,3 +97,4 @@ const cow = {
     kind: "cow",
 };
 console.log(getFarmAnimalSound(cow));
+// exhaustiveness checks with never
