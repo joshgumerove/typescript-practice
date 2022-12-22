@@ -51,3 +51,28 @@ function getRuntime(media) {
 }
 console.log(getRuntime({ title: "Gladiator", duration: 3.5 }));
 console.log(getRuntime({ title: "Friends", episodes: 10, episodeDuration: 35 }));
+// instance of narrowing
+function printFullDate(date) {
+    if (date instanceof Date) {
+        console.log(date.toUTCString());
+    }
+    else {
+        console.log(new Date(date).toUTCString());
+    }
+}
+function isCat(animal) {
+    return animal.numLives !== undefined;
+}
+const jerry = {
+    name: "Jerry",
+    numLives: 10,
+};
+console.log(isCat(jerry));
+function makeNoise(animal) {
+    if (isCat(animal)) {
+        animal; // now know inside here it is of type cat
+        return "Meow";
+    }
+    animal; // now ts knows here that it is of type dog
+    return "woof";
+}

@@ -75,3 +75,45 @@ console.log(getRuntime({ title: "Gladiator", duration: 3.5 }));
 console.log(
   getRuntime({ title: "Friends", episodes: 10, episodeDuration: 35 })
 );
+
+// instance of narrowing
+
+function printFullDate(date: string | Date) {
+  if (date instanceof Date) {
+    console.log(date.toUTCString());
+  } else {
+    console.log(new Date(date).toUTCString());
+  }
+}
+
+// type predicates: specific to TypeScript (not a JS feature)
+
+interface Cat {
+  name: string;
+  numLives: number;
+}
+
+interface Dog {
+  name: string;
+  breed: string;
+}
+
+function isCat(animal: Cat | Dog): animal is Cat {
+  return (animal as Cat).numLives !== undefined;
+}
+
+const jerry = {
+  name: "Jerry",
+  numLives: 10,
+};
+
+console.log(isCat(jerry));
+
+function makeNoise(animal: Cat | Dog): string {
+  if (isCat(animal)) {
+    animal; // now know inside here it is of type cat
+    return "Meow";
+  }
+  animal; // now ts knows here that it is of type dog
+  return "woof";
+}
