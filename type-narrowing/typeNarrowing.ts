@@ -48,3 +48,30 @@ function someDemo(x: string | number, y: string | boolean) {
 }
 
 someFunc(true, 7);
+
+// narrowing with the in operator
+console.log("***new section***");
+
+interface Movie2 {
+  title: string;
+  duration: number;
+}
+
+interface TVShow {
+  title: string;
+  episodes: number;
+  episodeDuration: number;
+}
+
+function getRuntime(media: TVShow | Movie2) {
+  if ("episodes" in media) {
+    return media.episodes;
+  }
+
+  return media.title;
+}
+
+console.log(getRuntime({ title: "Gladiator", duration: 3.5 }));
+console.log(
+  getRuntime({ title: "Friends", episodes: 10, episodeDuration: 35 })
+);

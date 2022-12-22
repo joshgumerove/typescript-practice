@@ -41,3 +41,13 @@ function someDemo(x, y) {
     }
 }
 someFunc(true, 7);
+// narrowing with the in operator
+console.log("***new section***");
+function getRuntime(media) {
+    if ("episodes" in media) {
+        return media.episodes;
+    }
+    return media.title;
+}
+console.log(getRuntime({ title: "Gladiator", duration: 3.5 }));
+console.log(getRuntime({ title: "Friends", episodes: 10, episodeDuration: 35 }));
