@@ -8,3 +8,16 @@ function triple(value) {
 }
 console.log(triple("Josh"));
 console.log(triple(100));
+console.log("***new section***");
+const printLetters = (word) => {
+    if (!word || word.trim() === "") {
+        console.log("No word provided");
+        return;
+    }
+    for (const letter of word) {
+        console.log(letter);
+    }
+};
+printLetters("");
+printLetters(null);
+printLetters("Gumerove");
