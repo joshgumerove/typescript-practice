@@ -8,6 +8,7 @@ function triple(value) {
 }
 console.log(triple("Josh"));
 console.log(triple(100));
+// truthiness guards
 console.log("***new section***");
 const printLetters = (word) => {
     if (!word || word.trim() === "") {
@@ -18,6 +19,25 @@ const printLetters = (word) => {
         console.log(letter);
     }
 };
+// note that "" is a falsy string
 printLetters("");
 printLetters(null);
 printLetters("Gumerove");
+// equality narrowing: involves comparing types to eacho other before doing certain opertaions with values
+console.log("***new section***");
+const someFunc = (x, y) => {
+    if (x === y) {
+        x.toUpperCase();
+        y.toUpperCase();
+    }
+    else {
+        console.log(x);
+        console.log(y);
+    }
+};
+function someDemo(x, y) {
+    if (x === y) {
+        x.toUpperCase();
+    }
+}
+someFunc(true, 7);

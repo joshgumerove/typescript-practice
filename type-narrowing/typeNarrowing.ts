@@ -22,6 +22,29 @@ const printLetters = (word: string | null): void => {
   }
 };
 
+// note that "" is a falsy string
+
 printLetters("");
 printLetters(null);
 printLetters("Gumerove");
+
+// equality narrowing: involves comparing types to eacho other before doing certain opertaions with values
+console.log("***new section***");
+
+const someFunc = (x: string | boolean, y: string | number) => {
+  if (x === y) {
+    x.toUpperCase();
+    y.toUpperCase();
+  } else {
+    console.log(x);
+    console.log(y);
+  }
+};
+
+function someDemo(x: string | number, y: string | boolean) {
+  if (x === y) {
+    x.toUpperCase();
+  }
+}
+
+someFunc(true, 7);
