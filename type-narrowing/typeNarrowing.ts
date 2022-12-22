@@ -161,7 +161,9 @@ function getFarmAnimalSound(animal: FarmAnimal) {
     case "sheep":
       return "baaahhh";
     default: //should never make it here if handled all cases correctly (never checking)
-      const shouldNeverGetHere: never = animal; // to tell us there is an error
+    // to tell us there is an error
+      const shouldNeverGetHere: never = animal;
+      return shouldNeverGetHere;
   }
 }
 
