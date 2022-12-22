@@ -76,3 +76,20 @@ function makeNoise(animal) {
     animal; // now ts knows here that it is of type dog
     return "woof";
 }
+function getFarmAnimalSound(animal) {
+    switch (animal.kind) {
+        case "pig":
+            return "Oink!";
+        case "cow":
+            return "mooo";
+        case "rooster":
+            return "doodledooo!";
+    }
+}
+const cow = {
+    name: "James",
+    weight: 1000,
+    age: 10,
+    kind: "cow",
+};
+console.log(getFarmAnimalSound(cow));

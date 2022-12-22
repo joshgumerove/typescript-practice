@@ -117,3 +117,48 @@ function makeNoise(animal: Cat | Dog): string {
   animal; // now ts knows here that it is of type dog
   return "woof";
 }
+
+// discriminated unions: share a property of literal type (new section)
+
+interface Rooster {
+  name: string;
+  weight: number;
+  age: number;
+  kind: "rooster";
+}
+
+interface Cow {
+  name: string;
+  weight: number;
+  age: number;
+  kind: "cow";
+}
+
+interface Pig {
+  name: string;
+  weight: number;
+  age: number;
+  kind: "pig";
+}
+
+type FarmAnimal = Pig | Rooster | Cow;
+
+function getFarmAnimalSound(animal: FarmAnimal) {
+  switch (animal.kind) {
+    case "pig":
+      return "Oink!";
+    case "cow":
+      return "mooo";
+    case "rooster":
+      return "doodledooo!";
+  }
+}
+
+const cow: Cow = {
+  name: "James",
+  weight: 1000,
+  age: 10,
+  kind: "cow",
+};
+
+console.log(getFarmAnimalSound(cow));
